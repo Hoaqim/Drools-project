@@ -1,0 +1,837 @@
+package com.sample.rules
+
+import com.sample.BuyingClassicCar.UI;
+
+global UI ui;
+
+declare Answer
+	answer: String
+end
+
+rule "First question"
+when
+then
+	String question = "Why do you want a classic?";
+	String[] options = {
+		"New cars have no soul", 
+		"I prefer the style", 
+		"Love speed, hate safety", 
+		"I guess I'm making some kind of statement about something?",
+		"Reliability and convenience bore me"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "1 no soul"
+when
+	Answer(answer == "New cars have no soul")
+then
+	String question = "What does soul mean to you?";
+	String[] options = {
+		"Easy: ability to drive off a pier into an estuary",
+		"Synonym for weird",
+		"Technically novel",
+		"Soul means the car had an honest job, like a cop or cabbie",
+		"It means riding in it is like sitting on a sofa",
+		"It means the car is often starring in movies",
+		"It could mean pure evil?",
+		"Sould is the spirits of 43 dead clowns haunting the car",
+		"Soul is the ability to go a million miles with su carbs and lucas electrics"};
+		
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "1 the style"
+when
+	Answer(answer == "I prefer the style")
+then
+	String question = "OK, what kind of style?";
+	String[] options = {
+		"African dictator",
+		"I love corvairs but live in a 3/4 scale universe",
+		"Like buck roger's boss's dad",
+		"I love chrome and loud shirts",
+		"Really Slow cars that look fast",
+		"I love brass and lanterns",
+		"I can only drive cars that are museum-worthy",
+		"Working class hero, also beer",
+		"Classic german with a touch of pedal confusion"};
+		
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "1 love speed"
+when
+	Answer(answer == "Love speed, hate safety")
+then
+	String question = "Real speed or just feels speedy?";
+	String[] options = {
+		"Fake is fine",
+		"I have a death wish",
+		"I love speed and money"};
+
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "1 statement?"
+when
+	Answer(answer == "I guess I'm making some kind of statement about something?")
+then
+	String question = "Great, what statement?";
+	String[] options = {
+		"I'm really rich but like to pretend I'm still a hippie",
+		"The motership left me in Paris",
+		"I run an NYC-themed diner in Las Vegas",
+		"I will only drive vehicles with two distinct luggage areas",
+		"I live dangerously and nader can suck it",
+		"I'm a kook. An american kook.",
+		"I take driving seriously and have the gloves to prove it",
+		"I like being part of a massive automotive subculture",
+		"I'm a refugee from an alternate future with zeppelins and shit",
+		"I hate people knowing what i drive",
+		"I kinda wanted a motorcycle, but I have no balance",
+		"My wallet is on chain"};
+
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "1 reliability bore me"
+when
+	Answer(answer == "Reliability and convenience bore me")
+then
+	String question = "Oh yeah? Why's that?";
+	String[] options = {
+		"I want to know how cars work",
+		"I'm erotically drawn to tow trucks and freeway shoulders"};
+
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "2. Death wish"
+when
+	Answer(answer == "I have a death wish")
+then
+	String question = "How do you want to go?";
+	String[] options = {
+		"Crushed by V8 in tiny space",
+		"Run out of talent, off cliff",
+		"Car, tree",
+		"Blaze of glory",
+		"Electrocuted by wiper switch"};
+
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "2. I love speed and money"
+when
+	Answer(answer == "I love speed and money")
+then
+	String question = "Great, who are you?";
+	String[] options = {
+		"Some kind of duke and i rally",
+		"My goal is to drive my childhood bedroom posters",
+		"I have a weird fetish where i like people asking, is it a replica"};
+
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+
+rule "2. African dictator"
+when
+	Answer(answer == "African dictator")
+then
+	String question = "";
+	String[] options = {
+	"Mercedes benz"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "2. i love corvairs"
+when
+	Answer(answer == "I love corvairs but live in a 3/4 scale universe")
+then
+	String question = "";
+	String[] options = {
+	"Nsu prinz"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "2. boss's dad"
+when
+	Answer(answer == "Like buck roger's boss's dad")
+then
+	String question = "";
+	String[] options = {
+	"'59 cadillac eldorado"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "2. Love chrome"
+when
+	Answer(answer == "I love chrome and loud shirts")
+then
+	String question = "";
+	String[] options = {
+	"'57 chevy bel air"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "2. Really slow cars"
+when
+	Answer(answer == "Really slow cars that look fast")
+then
+	String question = "";
+	String[] options = {
+	"Opel gt",
+	"VW karmann ghia",
+	"Renault floride"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "2. I love brass and lantenrs"
+when
+	Answer(answer == "I love brass and lanterns")
+then
+	String question = "";
+	String[] options = {
+	"Anything pre ww1",
+	"maybe a packard?"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+
+rule "2. museum cars"
+when
+	Answer(answer == "I can only drive cars that are museum-worthy")
+then
+	String question = "";
+	String[] options = {
+	"Citroen ds",
+	"Lamborghini miura",
+	"Cord 812"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "2. classic german"
+when
+	Answer(answer == "Classic german with a touch of pedal confusion")
+then
+	String question = "";
+	String[] options = {
+	"Audi 100"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "2. Working class hero, also beer"
+when
+	Answer(answer == "Working class hero, also beer")
+then
+	String question = "";
+	String[] options = {
+	"Ford mustang",
+	"Does your hat say you'd rather push a chevy?"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "3. hat"
+when
+	Answer(answer == "Does your hat say you'd rather push a chevy?")
+then
+	String question = "Does your hat say you'd rather push a chevy?";
+	String[] options = {
+	"So it does, friend",
+	"Dammit, i lost my hat"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "END lost hat"
+when
+	Answer(answer == "Dammit, i lost my hat")
+then
+	String question = "";
+	String[] options = {
+	"Amc amx"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "END I have a hat"
+when
+	Answer(answer == "So it does, friend")
+then
+	String question = "";
+	String[] options = {
+	"Chevy camaro"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "END plane"
+when
+	Answer(answer == "They thought building a plane")
+then
+	String question = "";
+	String[] options = {
+	"saab 96"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "END Can burn cooking oil"
+when
+	Answer(answer == "Can burn cooking oil")
+then
+	String question = "";
+	String[] options = {
+	"Mercedes benz 300TD"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "END engine in the wrong place"
+when
+	Answer(answer == "Engine in the wrong place (maybe cooled by wrong stuff)")
+then
+	String question = "";
+	String[] options = {
+	"Porsche 912",
+	"Renault alpine"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "END metal hamantaschen"
+when
+	Answer(answer == "Instead of pistons, some metal hamantaschen")
+then
+	String question = "";
+	String[] options = {
+	"mazda rx-7"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "3. ford mustang"
+when
+	Answer(answer == "Ford mustang")
+then
+	String question = "What do you want from tires?";
+	String[] options = {
+	"Noise and smoke",
+	"Noise, smoke, and the trailer park's undying respect"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "End noise, smoke, respect"
+when
+	Answer(answer == "Noise, smoke, and the trailer park's undying respect")
+then
+	String question = "";
+	String[] options = {
+	"Fox body mustang"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "End noise, smoke"
+when
+	Answer(answer == "Noise and smoke")
+then
+	String question = "";
+	String[] options = {
+	"Ford mustang mach I",
+	"Chevy C3 corvette"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+
+rule "END electrocuted"
+when
+	Answer(answer == "Electrocuted by wiper switch")
+then
+	String question = "";
+	String[] options = {
+		"Jaguar E-type"};
+
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "END crushed"
+when
+	Answer(answer == "Crushed by V8 in tiny space")
+then
+	String question = "";
+	String[] options = {
+		"Sunbeam tiger"};
+
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+
+rule "END Blaze of glory"
+when
+	Answer(answer == "Blaze of glory")
+then
+	String question = "";
+	String[] options = {
+		"Ferrari testarossa"};
+
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+
+rule "END Car, tree"
+when
+	Answer(answer == "Car, tree")
+then
+	String question = "";
+	String[] options = {
+		"Camaro Iroc-Z",
+		"Plymouth road runner"};
+
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+
+rule "END Run out of talent"
+when
+	Answer(answer == "Run out of talent, off cliff")
+then
+	String question = "";
+	String[] options = {
+		"Porsche spyder"};
+
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+
+rule "End fast and cheap"
+when
+	Answer(answer == "Fast and cheap")
+then
+	String question = "";
+	String[] options = {
+		"Dodge omni glh"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "END FAKE IS FINE"
+when
+	Answer(answer == "Fake is fine")
+then
+	String question = "";
+	String[] options = {
+		"Datsun 510",
+		"Mini cooper",
+		"Mk1 VW golf gti",
+		"Honda crx"};
+
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "2 Technically novel"
+when
+	Answer(answer == "Technically novel")
+then
+	String question = "Like what?";
+	String[] options = {
+		"Instead of pistons some metal hamantaschen",
+		"Can burn cooking oil",
+		"Engine in the wrong place (maybe cooled by wrong stuff)",
+		"They thought they were building a plane"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "3. How cars work"
+when
+	Answer(answer == "I want to know how cars work")
+then
+	String question = "So something more simple?";
+	String[] options = {
+		"More archaic",
+		"Not that archaic",
+		"Sounds good"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "3. Erotically attracted to trucks"
+when
+	Answer(answer == "I'm erotically drawn to tow trucks and freeway shoulders")
+then
+	String question = "Ok, shoult it be pretty quick?";
+	String[] options = {
+	"Lotus elan",
+	"Also really lovely"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END kook lost a hat"
+when
+	Answer(answer == "I'm a kook. An american kook.")
+then
+	String question = "";
+	String[] options = {
+	"AMC PACER",
+	"AMC GREMLIN",
+	"AMC MAX"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END I take driving seriously and have the gloves to prove it"
+when
+	Answer(answer == "I take driving seriously and have the gloves to prove it")
+then
+	String question = "";
+	String[] options = {
+	"BMW E30",
+	"Porshe 911"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END I'm a refugee from an alternate future with zeppelins and shit"
+when
+	Answer(answer == "I'm a refugee from an alternate future with zeppelins and shit")
+then
+	String question = "";
+	String[] options = {
+	"Tatra T87"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END I hate people knowing what i drive"
+when
+	Answer(answer == "I have people knowing what i drive")
+then
+	String question = "";
+	String[] options = {
+	"Sterling 825",
+	"Mitsubishi starion",
+	"Isuzu I-mark"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+
+rule "End rich but hippie"
+when
+	Answer(answer == "I'm really rich but like to pretend I'm still a hippie")
+then
+	String question = "";
+	String[] options = {"VW Type 2 microbus"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END diner in las vegas"
+when
+	Answer(answer == "I run an NYC-themed diner in Las Vegas")
+then
+	String question = "";
+	String[] options = {"Checker Marathon"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END abandoned in Paris"
+when
+	Answer(answer == "The mothership left me in Paris")
+then
+	String question = "";
+	String[] options = {"Citroen SM"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END nader can suck it"
+when
+	Answer(answer == "I live dangerously and nader can suck it")
+then
+	String question = "";
+	String[] options = {"Chevy corvair"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END I like being part of a massive automotive subculture"
+when
+	Answer(answer == "I like being part of a massive automotive subculture")
+then
+	String question = "";
+	String[] options = {"VW Beetle",
+	"BWM 2002",
+	"MGB",
+	"Datsun 240Z",
+	"Volvo 240"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END I kinda wanted a motorcycle, but i have no balance"
+when
+	Answer(answer == "I kinda wanted a motorcycle, but I have no balance")
+then
+	String question = "";
+	String[] options = {"Lotus 7"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "3. My wallet is on a chain"
+when
+	Answer(answer == "My wallet is on a chain")
+then
+	String question = "";
+	String[] options = {"Ford falcon",
+	"Plymouth valiant",
+	"Not for style, I'm tired of losing it"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END Not for style"
+when
+	Answer(answer == "Not for style, I'm tired of losing it")
+then
+	String question = "";
+	String[] options = {"Rambler american"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "3. two distinct luggage areas"
+when
+	Answer(answer == "I will only drive vehicles with two distinct luggage areas") ||
+	Answer(answer == "NO")
+then
+	String question = "VW Type III";
+	String[] options = {
+	"NO",
+	"Something faster?"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "4. something faster"
+when
+	Answer(answer == "Something faster?") || Answer(answer == "No")
+then
+	String question = "Porshe 914";
+	String[] options = {"Even faster?",
+	"No"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END Even faster"
+when
+	Answer(answer == "Even faster?")
+then
+	String question = "";
+	String[] options = {"De tomaso mangusta"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END really lovely"
+when
+	Answer(answer == "Also really lovely")
+then
+	String question = "";
+	String[] options = {"Alfa romeo giulia super"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END more archaic"
+when
+	Answer(answer == "More archaic")
+then
+	String question = "Ford model T";
+	String[] options = {""};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end	
+
+rule "END Not that archaic"
+when
+	Answer(answer == "Not that archaic")
+then
+	String question = "Ford model A";
+	String[] options = {""};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END Sounds good"
+when
+	Answer(answer == "Sounds good")
+then
+	String question = "";
+	String[] options = {"Citroen 2CV",
+	"VW Thing",
+	"Willys jeep",
+	"Honda civic"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END Easy: ability to drive off a pier into an estuary"
+when
+	Answer(answer == "Easy: ability to drive off a pier into an estuary")
+then
+	String question = "";
+	String[] options = {"Amphicar"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END Synonym for weird"
+when
+	Answer(answer == "Synonym for weird")
+then
+	String question = "";
+	String[] options = {"BMW isetta",
+	"Messerchmidt kabinroller",
+	"subaru 360"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END Soul means the car had an honest job, like a cop or cabbie"
+when
+	Answer(answer == "Soul means the car had an honest job, like a cop or cabbie")
+then
+	String question = "";
+	String[] options = {"Ford crown vic",
+	"Dodge monaco",
+	"Chevy caprice"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "3. It means riding in sofa"
+when
+	Answer(answer == "It means riding in it is like sitting on a sofa")
+then
+	String question = "";
+	String[] options = {"Lincoln town car",
+	"A huge, fast fwd sofa?"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END Huge fast sofa"
+when
+	Answer(answer == "A huge, fast fwd sofa?")
+then
+	String question = "";
+	String[] options = {"Olds toronado"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END Movie star"
+when
+	Answer(answer == "It means the car is often starring in movies")
+then
+	String question = "";
+	String[] options = {"Delorean dmc-12",
+	"VW beetle"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END It could mean pure evil?"
+when
+	Answer(answer == "It could mean pure evil?")
+then
+	String question = "";
+	String[] options = {"Buick GNX",
+	"Plymouth fury"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END dead clowns"
+when
+	Answer(answer == "Soul is the spirits of 43 dead clowns haunting the car")
+then
+	String question = "";
+	String[] options = {"Nash metropolitan"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END million miles"
+when
+	Answer(answer == "Soul is the ability to go a million miles with su carbs and lucas electrics")
+then
+	String question = "";
+	String[] options = {"Volvo p1800"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END weird fetish"
+when
+	Answer(answer == "I have a weird fetish where i like people asking, is it a replica")
+then
+	String question = "";
+	String[] options = {"AC cobra",
+	"Porsche 356 speedster"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END bedroom posters"
+when
+	Answer(answer == "My goal is to drive my childhood bedroom posters")
+then
+	String question = "";
+	String[] options = {"Lamborghini countach",
+	"Ferrari 250 Gt0"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end
+
+rule "END Some kind of duke and i rally"
+when
+	Answer(answer == "Some kind of duke and i rally")
+then
+	String question = "";
+	String[] options = {"Lancia stratos"};
+	ui.update(question, options, false);
+	insert(new Answer(ui.getUserAnswer()));
+end

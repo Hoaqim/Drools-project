@@ -35,7 +35,7 @@ then
 		"It means riding in it is like sitting on a sofa",
 		"It means the car is often starring in movies",
 		"It could mean pure evil?",
-		"Sould is the spirits of 43 dead clowns haunting the car",
+		"Soul is the spirits of 43 dead clowns haunting the car",
 		"Soul is the ability to go a million miles with su carbs and lucas electrics"};
 		
 	ui.update(question, options, false);
@@ -83,7 +83,7 @@ then
 	String question = "Great, what statement?";
 	String[] options = {
 		"I'm really rich but like to pretend I'm still a hippie",
-		"The motership left me in Paris",
+		"The mothership left me in Paris",
 		"I run an NYC-themed diner in Las Vegas",
 		"I will only drive vehicles with two distinct luggage areas",
 		"I live dangerously and nader can suck it",
@@ -149,7 +149,7 @@ when
 then
 	String question = "";
 	String[] options = {
-	"Mercedes benz"};
+	"Mercedes benz 600"};
 	ui.update(question, options, false);
 	insert(new Answer(ui.getUserAnswer()));
 end	
@@ -285,7 +285,7 @@ end
 
 rule "END plane"
 when
-	Answer(answer == "They thought building a plane")
+	Answer(answer == "They thought they were building a plane")
 then
 	String question = "";
 	String[] options = {
@@ -461,7 +461,7 @@ when
 then
 	String question = "Like what?";
 	String[] options = {
-		"Instead of pistons some metal hamantaschen",
+		"Instead of pistons, some metal hamantaschen",
 		"Can burn cooking oil",
 		"Engine in the wrong place (maybe cooled by wrong stuff)",
 		"They thought they were building a plane"};
@@ -486,7 +486,7 @@ rule "3. Erotically attracted to trucks"
 when
 	Answer(answer == "I'm erotically drawn to tow trucks and freeway shoulders")
 then
-	String question = "Ok, shoult it be pretty quick?";
+	String question = "Ok, should it be pretty quick?";
 	String[] options = {
 	"Lotus elan",
 	"Also really lovely"};

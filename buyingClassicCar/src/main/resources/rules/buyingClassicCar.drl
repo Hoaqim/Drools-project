@@ -93,7 +93,7 @@ then
 		"I'm a refugee from an alternate future with zeppelins and shit",
 		"I hate people knowing what i drive",
 		"I kinda wanted a motorcycle, but I have no balance",
-		"My wallet is on chain"};
+		"My wallet is on a chain"};
 
 	ui.update(question, options, false);
 	insert(new Answer(ui.getUserAnswer()));
